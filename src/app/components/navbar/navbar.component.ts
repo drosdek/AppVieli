@@ -11,47 +11,47 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
     private listTitles: any[];
     location: Location;
-      mobile_menu_visible: any = 0;
+    mobile_menu_visible: any = 0;
     private toggleButton: any;
     private sidebarVisible: boolean;
 
     constructor(location: Location,  private element: ElementRef, private router: Router) {
       this.location = location;
-          this.sidebarVisible = false;
+      this.sidebarVisible = false;
     }
 
-    ngOnInit(){
+    ngOnInit(): void {
       this.listTitles = ROUTES.filter(listTitle => listTitle);
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
       this.router.events.subscribe((event) => {
         this.sidebarClose();
-         var $layer: any = document.getElementsByClassName('close-layer')[0];
-         if ($layer) {
-           $layer.remove();
-           this.mobile_menu_visible = 0;
+        var $layer: any = document.getElementsByClassName('close-layer')[0];
+        if ($layer) {
+          $layer.remove();
+          this.mobile_menu_visible = 0;
          }
      });
     }
 
-    sidebarOpen() {
-        const toggleButton = this.toggleButton;
-        const body = document.getElementsByTagName('body')[0];
-        setTimeout(function(){
-            toggleButton.classList.add('toggled');
-        }, 500);
+    sidebarOpen(): void {
+      const toggleButton = this.toggleButton;
+      const body = document.getElementsByTagName('body')[0];
+      setTimeout(() => {
+        toggleButton.classList.add('toggled');
+      }, 500);
 
-        body.classList.add('nav-open');
+      body.classList.add('nav-open');
 
-        this.sidebarVisible = true;
-    };
-    sidebarClose() {
+      this.sidebarVisible = true;
+    }
+    sidebarClose(): void {
         const body = document.getElementsByTagName('body')[0];
         this.toggleButton.classList.remove('toggled');
         this.sidebarVisible = false;
         body.classList.remove('nav-open');
-    };
-    sidebarToggle() {
+    }
+    sidebarToggle(): void {
         // const toggleButton = this.toggleButton;
         // const body = document.getElementsByTagName('body')[0];
         var $toggle = document.getElementsByClassName('navbar-toggler')[0];
@@ -63,19 +63,19 @@ export class NavbarComponent implements OnInit {
         }
         const body = document.getElementsByTagName('body')[0];
 
-        if (this.mobile_menu_visible == 1) {
+        if (this.mobile_menu_visible === 1) {
             // $('html').removeClass('nav-open');
             body.classList.remove('nav-open');
             if ($layer) {
                 $layer.remove();
             }
-            setTimeout(function() {
+            setTimeout(() => {
                 $toggle.classList.remove('toggled');
             }, 400);
 
             this.mobile_menu_visible = 0;
         } else {
-            setTimeout(function() {
+            setTimeout(() => {
                 $toggle.classList.add('toggled');
             }, 430);
 
@@ -89,7 +89,7 @@ export class NavbarComponent implements OnInit {
                 document.getElementsByClassName('wrapper-full-page')[0].appendChild($layer);
             }
 
-            setTimeout(function() {
+            setTimeout(() => {
                 $layer.classList.add('visible');
             }, 100);
 
@@ -107,18 +107,18 @@ export class NavbarComponent implements OnInit {
             this.mobile_menu_visible = 1;
 
         }
-    };
+    }
 
     getTitle(){
       var titlee = this.location.prepareExternalUrl(this.location.path());
-      if(titlee.charAt(0) === '#'){
-          titlee = titlee.slice( 1 );
+      if (titlee.charAt(0) === '#') {
+        titlee = titlee.slice( 1 );
       }
 
       for(var item = 0; item < this.listTitles.length; item++){
-          if(this.listTitles[item].path === titlee){
-              return this.listTitles[item].title;
-          }
+        if (this.listTitles[item].path === titlee) {
+          return this.listTitles[item].title;
+        }
       }
       return 'Dashboard';
     }
