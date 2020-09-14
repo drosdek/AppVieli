@@ -11,7 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TelaoComponent } from 'src/app/telao/telao.component';
+import { TelaoComponent } from '../../pages/telao/telao.component';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 

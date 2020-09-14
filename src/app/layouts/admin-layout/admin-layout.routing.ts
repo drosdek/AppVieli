@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 
 import { DashboardComponent } from '../../dashboard/dashboard.component';
-import { TelaoComponent } from 'src/app/telao/telao.component';
-import { ControleProducaoComponent } from 'src/app/controle-producao/controle-producao.component';
+import { TelaoComponent } from '../../pages/telao/telao.component';
+import { ControleProducaoComponent } from '../../pages/controle-producao/controle-producao.component';
 import { SettingsComponent } from 'src/app/pages/settings/settings.component';
 
 export const AdminLayoutRoutes: Routes = [
