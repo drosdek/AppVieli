@@ -1,0 +1,139 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Input Url API -->
+      <div class="col-6">
+        <div class="card p-3">
+          <label for="basic-url">Digite o endereco da API</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3"><b>Ex.</b><i>https://localhost:3005</i></span>
+            </div>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+          </div>
+        </div>
+      </div>
+      <!-- Defining time for transition between teloes -->
+      <div class="col-6">
+        <div class="card p-3">
+          <label for="basic-url">Defina o tempo para transicao entre telao</label>
+          <div class="d-flex justify-content-center my-1">
+              <input type="range" class="custom-range" id="customRange11" min="0" max="300">
+            <span class="font-weight-bold text-primary ml-2 valueSpan2"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      {{ rangeToggle() }}
+      <div class="col-3">
+        <div class="card p-3">
+          <span class="font-weight-bolder font-hab-alerta">Habilitar Alerta Disponibilidade?</span>
+          <label class="switch">
+            <input id="toggle-event" type="checkbox" data-toggle="collapse" data-target="#alDispCol" aria-expanded="true" aria-controls="alDispCol">
+            <span class="slider round"></span>
+          </label>
+          <div id="alDispCol" class="collapse">
+            <span> Defina o range para verde</span>
+            <form class="range-field">
+              <input type="range" min="0" max="100" value="0" id="idAlDispVerde"/>
+              <span class="font-weight-bold text-primary ml-2 classAlDispVerde"></span>
+            </form>
+            <span> Defina o range para amarelo</span>
+            <form class="range-field">
+              <input type="range" min="0" max="100" value="0" id="idAlDispAmarelo"/>
+              <span class="font-weight-bold text-primary ml-2 classAlDispAmarelo"></span>
+            </form>
+            <span>Defina o range para vermelho</span>
+            <form class="range-field">
+              <input type="range" min="0" max="100" value="0" id="idAlDispVermelho"/>
+              <span class="font-weight-bold text-primary ml-2 classAlDispVermelho"></span>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-3">
+        <div class="card p-3">
+          <span class="font-weight-bolder font-hab-alerta">Habilitar Alerta Performance?</span>
+          <label class="switch">
+            <input id="toggle-event" type="checkbox" data-toggle="collapse" data-target="#alPerfCol" aria-expanded="true" aria-controls="alPerfCol">
+            <span class="slider round"></span>
+          </label>
+          <div id="alPerfCol" class="collapse">
+            <span> Defina o range para verde</span>
+            <form class="range-field">
+              <input type="range" min="0" max="100" value="0" id="idAlPerfVerde"/>
+              <span class="font-weight-bold text-primary ml-2 classAlPerfVerde"></span>
+            </form>
+            <span> Defina o range para amarelo</span>
+            <form class="range-field">
+              <input type="range" min="0" max="100" value="0" id="idAlPerfAmarelo"/>
+              <span class="font-weight-bold text-primary ml-2 classAlPerfAmarelo"></span>
+            </form>
+            <span>Defina o range para vermelho</span>
+            <form class="range-field">
+              <input type="range" min="0" max="100" value="0" id="idAlPerfVermelho"/>
+              <span class="font-weight-bold text-primary ml-2 classAlPerfVermelho"></span>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-3">
+        <div class="card p-3">
+          <span class="font-weight-bolder font-hab-alerta">Habilitar Alerta Qualidade?</span>
+          <label class="switch">
+            <input id="toggle-event" type="checkbox" data-toggle="collapse" data-target="#alQualCol" aria-expanded="true" aria-controls="alQualCol">
+            <span class="slider round"></span>
+          </label>
+          <div id="alQualCol" class="collapse">
+            <span> Defina o range para verde</span>
+            <form class="range-field">
+              <input type="range" min="0" max="100" value="0" id="idAlQualVerde"/>
+              <span class="font-weight-bold text-primary ml-2 classAlQualVerde"></span>
+            </form>
+            <span> Defina o range para amarelo</span>
+            <form class="range-field">
+              <input type="range" min="0" max="100" value="0" id="idAlQualAmarelo"/>
+              <span class="font-weight-bold text-primary ml-2 classAlQualAmarelo"></span>
+            </form>
+            <span>Defina o range para vermelho</span>
+            <form class="range-field">
+              <input type="range" min="0" max="100" value="0" id="idAlQualVermelho"/>
+              <span class="font-weight-bold text-primary ml-2 classAlQualVermelho"></span>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-3">
+        <div class="card p-3">
+          <span class="font-weight-bolder font-hab-alerta">Habilitar Alerta OEE?</span>
+          <label class="switch">
+            <input id="toggle-event" type="checkbox" data-toggle="collapse" data-target="#alOeeCol" aria-expanded="true" aria-controls="alOeeCol">
+            <span class="slider round"></span>
+          </label>
+          <div id="alOeeCol" class="collapse">
+            <span> Defina o range para verde</span>
+            <form class="range-field">
+              <input type="range" min="0" max="100" value="0" id="idAlOeeVerde"/>
+              <span class="font-weight-bold text-primary ml-2 classAlOeeVerde"></span>
+            </form>
+            <span> Defina o range para amarelo</span>
+            <form class="range-field">
+              <input type="range" min="0" max="100" value="0" id="idAlOeeAmarelo"/>
+              <span class="font-weight-bold text-primary ml-2 classAlOeeAmarelo"></span>
+            </form>
+            <span>Defina o range para vermelho</span>
+            <form class="range-field">
+              <input type="range" min="0" max="100" value="0" id="idAlOeeVermelho"/>
+              <span class="font-weight-bold text-primary ml-2 classAlOeeVermelho"></span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

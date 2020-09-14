@@ -12,6 +12,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TelaoComponent } from 'src/app/telao/telao.component';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 
@@ -26,7 +28,9 @@ import { TelaoComponent } from 'src/app/telao/telao.component';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatSliderModule,
+    MatSlideToggleModule
   ],
   declarations: [
     DashboardComponent,

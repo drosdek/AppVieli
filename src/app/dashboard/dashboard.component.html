@@ -1,17 +1,341 @@
 <div class="main-content">
-  <div class="container-fluid">
+  <div class="container-lg">
     <div class="row">
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
+
           <div class="carousel-item active">
-              <img src="../../assets/img/sidebar-1.jpg" class="d-block w-100" alt="...">
+          <div class="row">
+      <div class="col-12">
+        <button id='click' class="btn btn-link">
+          <span class="material-icons" style="color: darkred;">
+            settings_overscan
+          </span>
+        </button>
+      </div>
+    </div>
+    <!-- Header show name and date+hour -->
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        <div class="card default h-100 font-title-telao">
+          <div class="card-body">
+            <div class="col-lg-7 col-md-7 col-sm-12 float-left font-weight-bolder text-lg-left text-md-left text-sm-center font-title-telao" id="equipamento">
+              NOME EQUIPAMENTO 1
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-12 float-right font-title font-weight-bolder text-lg-right text-md-right text-sm-center font-time-telao" id="horaatual">
+              00/00/0000 - 00:00:00
+            </div>
           </div>
-          <div class="carousel-item">
-            <img src="../../assets/img/sidebar-2.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+    </div>
+    <!-- Show Production and Ritmo this equipament -->
+    <div class="row">
+      <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 pr-lg-0 mt-1">
+        <div class="card default h-100">
+          <div class="card-body">
+            <span class="font-indicador-producao font-weight-bolder" id="producao">00000,0</span>
+            <span class="font-um-producao font-weight-bolder" id="unidade">UM</span>
           </div>
-          <div class="carousel-item">
-            <img src="../../assets/img/sidebar-3.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 pl-lg-1 mt-1">
+        <div class="card default h-100">
+          <div class="card-header font-header-card justify-content-center">
+            <div class="row justify-content-center">
+              <span>RITMO - <span id="unidades">UM</span></span>
+            </div>
           </div>
+          <div class="card-body font-ritmo-producao">
+            <div class="row pt-lg-2">
+              <div class="col-sm-6 borda">Atual:</div>
+              <div class="col-sm-6 text-sm-right font-weight-bolder" id="ritmominuto">00000.0</div>
+            </div>
+            <div class="row pt-lg-2">
+              <div class="col-sm-6 borda">Dia:</div>
+              <div class="col-sm-6 text-sm-right font-weight-bolder" id="ritmodia">00000.0</div>
+            </div>
+            <div class="row pt-lg-2">
+              <div class="col-sm-6 borda">Meta:</div>
+              <div class="col-sm-6 text-sm-right font-weight-bolder" id="ritmometa">00000.0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Show Meta, Pct Meta, Rework -->
+    <div class="row font-weight-bolder">
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mt-1 pr-md-0">
+        <div class="card default text-center h-100">
+          <div class="card-header font-header-card">META</div>
+          <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="metaatual">000,0 %</div>
+        </div>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mt-1 pr-md-1 pl-md-1">
+        <div class="card default text-center h-100">
+          <div class="card-header font-header-card">% META</div>
+          <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="pctmeta">000,0 %</div>
+        </div>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mt-1 pl-md-0">
+        <div class="card default text-center h-100">
+          <div class="card-header font-header-card">RETRABALHO</div>
+          <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="retrabalho">000,0 %</div>
+        </div>
+      </div>
+    </div>
+    <!-- Show Quality, Performance, Avaliability and OEE -->
+    <div class="row font-weight-bolder">
+      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 mt-1 pr-md-0 pr-lg-1">
+        <div class="card text-center default h-100 alertaDisponibilidade">
+          <div class="card-header font-header-card">Disponibilidade</div>
+          <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="disponibilidade">000,0 %</div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 mt-1 pl-md-1 pr-md-0 pl-lg-0 pr-lg-1">
+        <div class="card text-center default h-100 alertaPerformance">
+          <div class="card-header font-header-card">Performance</div>
+          <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="performance">000,0 %</div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 mt-1 pl-md-1 pr-md-1 pl-lg-0 pr-lg-1">
+        <div class="card text-center default h-100 alertaQualidade">
+          <div class="card-header font-header-card">Qualidade</div>
+          <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="qualidade">000,0 %</div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 mt-1 pl-md-0 pl-lg-0">
+        <div class="card text-center default h-100 alertaOee alertaPctOee">
+          <div class="card-header font-header-card">OEE</div>
+          <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="oee">000,0 %</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="carousel-item">
+    <div class="row">
+<div class="col-12">
+  <button id='click' class="btn btn-link">
+    <span class="material-icons" style="color: darkred;">
+      settings_overscan
+    </span>
+  </button>
+</div>
+</div>
+<!-- Header show name and date+hour -->
+<div class="row">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+  <div class="card default h-100 font-title-telao">
+    <div class="card-body">
+      <div class="col-lg-7 col-md-7 col-sm-12 float-left font-weight-bolder text-lg-left text-md-left text-sm-center font-title-telao" id="equipamento">
+        NOME EQUIPAMENTO 2
+      </div>
+      <div class="col-lg-5 col-md-5 col-sm-12 float-right font-title font-weight-bolder text-lg-right text-md-right text-sm-center font-time-telao" id="horaatual">
+        00/00/0000 - 00:00:00
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Show Production and Ritmo this equipament -->
+<div class="row">
+<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 pr-lg-0 mt-1">
+  <div class="card default h-100">
+    <div class="card-body">
+      <span class="font-indicador-producao font-weight-bolder" id="producao">00000,0</span>
+      <span class="font-um-producao font-weight-bolder" id="unidade">UM</span>
+    </div>
+  </div>
+</div>
+<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 pl-lg-1 mt-1">
+  <div class="card default h-100">
+    <div class="card-header font-header-card justify-content-center">
+      <div class="row justify-content-center">
+        <span>RITMO - <span id="unidades">UM</span></span>
+      </div>
+    </div>
+    <div class="card-body font-ritmo-producao">
+      <div class="row pt-lg-2">
+        <div class="col-sm-6 borda">Atual:</div>
+        <div class="col-sm-6 text-sm-right font-weight-bolder" id="ritmominuto">00000.0</div>
+      </div>
+      <div class="row pt-lg-2">
+        <div class="col-sm-6 borda">Dia:</div>
+        <div class="col-sm-6 text-sm-right font-weight-bolder" id="ritmodia">00000.0</div>
+      </div>
+      <div class="row pt-lg-2">
+        <div class="col-sm-6 borda">Meta:</div>
+        <div class="col-sm-6 text-sm-right font-weight-bolder" id="ritmometa">00000.0</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Show Meta, Pct Meta, Rework -->
+<div class="row font-weight-bolder">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mt-1 pr-md-0">
+  <div class="card default text-center h-100">
+    <div class="card-header font-header-card">META</div>
+    <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="metaatual">000,0 %</div>
+  </div>
+</div>
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mt-1 pr-md-1 pl-md-1">
+  <div class="card default text-center h-100">
+    <div class="card-header font-header-card">% META</div>
+    <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="pctmeta">000,0 %</div>
+  </div>
+</div>
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mt-1 pl-md-0">
+  <div class="card default text-center h-100">
+    <div class="card-header font-header-card">RETRABALHO</div>
+    <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="retrabalho">000,0 %</div>
+  </div>
+</div>
+</div>
+<!-- Show Quality, Performance, Avaliability and OEE -->
+<div class="row font-weight-bolder">
+<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 mt-1 pr-md-0 pr-lg-1">
+  <div class="card text-center default h-100 alertaDisponibilidade">
+    <div class="card-header font-header-card">Disponibilidade</div>
+    <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="disponibilidade">000,0 %</div>
+  </div>
+</div>
+<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 mt-1 pl-md-1 pr-md-0 pl-lg-0 pr-lg-1">
+  <div class="card text-center default h-100 alertaPerformance">
+    <div class="card-header font-header-card">Performance</div>
+    <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="performance">000,0 %</div>
+  </div>
+</div>
+<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 mt-1 pl-md-1 pr-md-1 pl-lg-0 pr-lg-1">
+  <div class="card text-center default h-100 alertaQualidade">
+    <div class="card-header font-header-card">Qualidade</div>
+    <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="qualidade">000,0 %</div>
+  </div>
+</div>
+<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 mt-1 pl-md-0 pl-lg-0">
+  <div class="card text-center default h-100 alertaOee alertaPctOee">
+    <div class="card-header font-header-card">OEE</div>
+    <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="oee">000,0 %</div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<div class="carousel-item">
+  <div class="row">
+<div class="col-12">
+<button id='click' class="btn btn-link">
+  <span class="material-icons" style="color: darkred;">
+    settings_overscan
+  </span>
+</button>
+</div>
+</div>
+<!-- Header show name and date+hour -->
+<div class="row">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+<div class="card default h-100 font-title-telao">
+  <div class="card-body">
+    <div class="col-lg-7 col-md-7 col-sm-12 float-left font-weight-bolder text-lg-left text-md-left text-sm-center font-title-telao" id="equipamento">
+      NOME EQUIPAMENTO 3
+    </div>
+    <div class="col-lg-5 col-md-5 col-sm-12 float-right font-title font-weight-bolder text-lg-right text-md-right text-sm-center font-time-telao" id="horaatual">
+      00/00/0000 - 00:00:00
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<!-- Show Production and Ritmo this equipament -->
+<div class="row">
+<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 pr-lg-0 mt-1">
+<div class="card default h-100">
+  <div class="card-body">
+    <span class="font-indicador-producao font-weight-bolder" id="producao">00000,0</span>
+    <span class="font-um-producao font-weight-bolder" id="unidade">UM</span>
+  </div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 pl-lg-1 mt-1">
+<div class="card default h-100">
+  <div class="card-header font-header-card justify-content-center">
+    <div class="row justify-content-center">
+      <span>RITMO - <span id="unidades">UM</span></span>
+    </div>
+  </div>
+  <div class="card-body font-ritmo-producao">
+    <div class="row pt-lg-2">
+      <div class="col-sm-6 borda">Atual:</div>
+      <div class="col-sm-6 text-sm-right font-weight-bolder" id="ritmominuto">00000.0</div>
+    </div>
+    <div class="row pt-lg-2">
+      <div class="col-sm-6 borda">Dia:</div>
+      <div class="col-sm-6 text-sm-right font-weight-bolder" id="ritmodia">00000.0</div>
+    </div>
+    <div class="row pt-lg-2">
+      <div class="col-sm-6 borda">Meta:</div>
+      <div class="col-sm-6 text-sm-right font-weight-bolder" id="ritmometa">00000.0</div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<!-- Show Meta, Pct Meta, Rework -->
+<div class="row font-weight-bolder">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mt-1 pr-md-0">
+<div class="card default text-center h-100">
+  <div class="card-header font-header-card">META</div>
+  <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="metaatual">000,0 %</div>
+</div>
+</div>
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mt-1 pr-md-1 pl-md-1">
+<div class="card default text-center h-100">
+  <div class="card-header font-header-card">% META</div>
+  <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="pctmeta">000,0 %</div>
+</div>
+</div>
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mt-1 pl-md-0">
+<div class="card default text-center h-100">
+  <div class="card-header font-header-card">RETRABALHO</div>
+  <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="retrabalho">000,0 %</div>
+</div>
+</div>
+</div>
+<!-- Show Quality, Performance, Avaliability and OEE -->
+<div class="row font-weight-bolder">
+<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 mt-1 pr-md-0 pr-lg-1">
+<div class="card text-center default h-100 alertaDisponibilidade">
+  <div class="card-header font-header-card">Disponibilidade</div>
+  <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="disponibilidade">000,0 %</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 mt-1 pl-md-1 pr-md-0 pl-lg-0 pr-lg-1">
+<div class="card text-center default h-100 alertaPerformance">
+  <div class="card-header font-header-card">Performance</div>
+  <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="performance">000,0 %</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 mt-1 pl-md-1 pr-md-1 pl-lg-0 pr-lg-1">
+<div class="card text-center default h-100 alertaQualidade">
+  <div class="card-header font-header-card">Qualidade</div>
+  <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="qualidade">000,0 %</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 mt-1 pl-md-0 pl-lg-0">
+<div class="card text-center default h-100 alertaOee alertaPctOee">
+  <div class="card-header font-header-card">OEE</div>
+  <div class="card-body font-indicadores pt-0 pb-0 pt-lg-2 pb-lg-2" id="oee">000,0 %</div>
+</div>
+</div>
+</div>
+</div>
+
+
+    
+
         </div>
       </div>
     </div>
