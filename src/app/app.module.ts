@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ComponentsModule } from './components/components.module';
 import { FormsModule } from '@angular/forms';
-import { SettingsComponent } from './pages/settings/settings.component';
 
 @NgModule({
   imports: [
@@ -21,8 +20,7 @@ import { SettingsComponent } from './pages/settings/settings.component';
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent,
-    SettingsComponent
+    AdminLayoutComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
