@@ -5,9 +5,6 @@ import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs';
 import PerfectScrollbar from 'perfect-scrollbar';
 import * as $ from 'jquery';
-import { Equipamento } from 'src/app/models/equipamento';
-import { EquipamentoService } from 'src/app/services/equipamento.service';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-layout',
@@ -19,10 +16,7 @@ export class AdminLayoutComponent implements OnInit {
   private lastPoppedUrl: string;
   private yScrollStack: number[] = [];
 
-  equipamento = {} as Equipamento;
-  equipamentos: Equipamento[];
-
-  constructor( public location: Location, private router: Router, private equipamentoService: EquipamentoService ) { }
+  constructor( public location: Location, private router: Router) { }
 
   ngOnInit(): void {
     const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
@@ -133,8 +127,6 @@ export class AdminLayoutComponent implements OnInit {
         $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
       }
     });
-
-    this.getEquipamentos();
   }
 
   ngAfterViewInit() {
@@ -156,24 +148,4 @@ export class AdminLayoutComponent implements OnInit {
     }
     return bool;
   }
-
-
-
-  // Chama o serviço para obtém todos os carros
-  getEquipamentos() {
-    this.equipamentoService.getEquipamentos().subscribe((equipamentos: Equipamento[]) => {
-      this.equipamentos = equipamentos;
-    });
-  }
-
-  // limpa o formulario
-  cleanForm(form: NgForm) {
-    this.getEquipamentos();
-    form.resetForm();
-    this.equipamento = {} as Equipamento;
-  }
-
-
-
-
 }

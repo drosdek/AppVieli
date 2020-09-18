@@ -21,9 +21,9 @@
                 <tbody>
                   <tr *ngFor="let equipamento of equipamentos">
                     <td class="align-middle font-weight-bolder">{{equipamento.equipamento}}</td>
-                    <td class="align-middle font-weight-bolder text-center">UM</td>
-                    <td class="align-middle font-weight-bolder text-center">Meta %</td>
-                    <td class="align-middle font-weight-bolder text-center">OEE %</td>
+                    <td class="align-middle font-weight-bolder text-center">{{equipamento.unidade}}</td>
+                    <td class="align-middle font-weight-bolder text-center">{{equipamento.metaatual}}%</td>
+                    <td class="align-middle font-weight-bolder text-center">{{equipamento.metaoee}}%</td>
                     <td class="align-middle font-weight-bolder text-center">Status</td>
                     <td class="align-middle font-weight-bolder text-center">-</td>
                     <td class="align-middle text-center"><button class="btn btn-link teste" onClick="window.location.href = '../index.html?idMaquina=${relatorio[t].id_equipamento}'">

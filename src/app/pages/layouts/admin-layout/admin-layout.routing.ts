@@ -6,37 +6,37 @@ import { TelaoComponent } from '../../telao/telao.component';
 
 export const AdminLayoutRoutes: Routes = [
   {
-    path: 'dashboard',
-    component: DashboardComponent,
+    path: '',
     children: [{
-      path: '',
-    }]
-  },
-  {
-    path: 'telao',
-    component: TelaoComponent,
-    children: [{
-      path: '',
+      path: 'dashboard',
+      component: DashboardComponent,
     }]
   },
   {
     path: '',
-    component: ControleProducaoComponent,
     children: [{
-      path: 'controle-producao',
-      loadChildren: () => import('../admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
+      path: 'telao',
+      component: TelaoComponent,
     }]
   },
   {
-    path: 'settings',
-    component: SettingsComponent,
+    path: '',
     children: [{
-      path: '',
+      path: 'controle-producao',
+      component: ControleProducaoComponent,
+      loadChildren: () => import('../../controle-producao/controle-producao.module').then(m => m.ControleProducaoModule)
+    }]
+  },
+  {
+    path: '',
+    children: [{
+      path: 'settings',
+      component: SettingsComponent
     }]
   }
 
-  // { path: 'dashboard',	component: DashboardComponent },
-  // { path: 'telao',	component: TelaoComponent },
-  // { path: 'settings', component: SettingsComponent},
-  // { path: 'controle-producao', component: ControleProducaoComponent }
+//   { path: 'dashboard',	component: DashboardComponent },
+//   { path: 'telao',	component: TelaoComponent },
+//   { path: 'settings', component: SettingsComponent},
+//   { path: 'controle-producao', component: ControleProducaoComponent }
 ];
