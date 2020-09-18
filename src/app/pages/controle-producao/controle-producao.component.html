@@ -10,51 +10,23 @@
             <div class="table-responsive">
               <table class="table">
                 <thead class=" text-primary">
-                  <th>Maquina</th>
-                  <th>Producao</th>
-                  <th>% Meta</th>
-                  <th>% OEE</th>
-                  <th>Status</th>
-                  <th>Tempo parado</th>
-                  <th>Visualizar</th>
+                  <th class="text-center">Maquina</th>
+                  <th class="text-center">Producao</th>
+                  <th class="text-center">% Meta</th>
+                  <th class="text-center">% OEE</th>
+                  <th class="text-center">Status</th>
+                  <th class="text-center">Tempo parado</th>
+                  <th class="text-center">Visualizar</th>
                 </thead>
                 <tbody>
                   <tr>
                     <td class="align-middle font-weight-bolder">Nome Maquina</td>
-                    <td class="align-middle font-weight-bolder">UM</td>
-                    <td class="align-middle font-weight-bolder">Meta %</td>
-                    <td class="align-middle font-weight-bolder">OEE %</td>
-                    <td class="align-middle font-weight-bolder">Status</td>
-                    <td class="align-middle">-</td>
-                    <td class="align-middle"><button class="btn btn-link teste" onClick="window.location.href = '../index.html?idMaquina=${relatorio[t].id_equipamento}'">
-                      <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="blue" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z"/>
-                        <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-                      </svg>
-                    </button></td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle font-weight-bolder">Nome Maquina</td>
-                    <td class="align-middle font-weight-bolder">UM</td>
-                    <td class="align-middle font-weight-bolder">Meta %</td>
-                    <td class="align-middle font-weight-bolder">OEE %</td>
-                    <td class="align-middle font-weight-bolder">Status</td>
-                    <td class="align-middle">-</td>
-                    <td class="align-middle"><button class="btn btn-link teste" onClick="window.location.href = '../index.html?idMaquina=${relatorio[t].id_equipamento}'">
-                      <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="blue" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z"/>
-                        <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-                      </svg>
-                    </button></td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle font-weight-bolder">Nome Maquina</td>
-                    <td class="align-middle font-weight-bolder">UM</td>
-                    <td class="align-middle font-weight-bolder">Meta %</td>
-                    <td class="align-middle font-weight-bolder">OEE %</td>
-                    <td class="align-middle font-weight-bolder">Status</td>
-                    <td class="align-middle">-</td>
-                    <td class="align-middle"><button class="btn btn-link teste" onClick="window.location.href = '../index.html?idMaquina=${relatorio[t].id_equipamento}'">
+                    <td class="align-middle font-weight-bolder text-center">UM</td>
+                    <td class="align-middle font-weight-bolder text-center">Meta %</td>
+                    <td class="align-middle font-weight-bolder text-center">OEE %</td>
+                    <td class="align-middle font-weight-bolder text-center">Status</td>
+                    <td class="align-middle font-weight-bolder text-center">-</td>
+                    <td class="align-middle text-center"><button class="btn btn-link teste" onClick="window.location.href = '../index.html?idMaquina=${relatorio[t].id_equipamento}'">
                       <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="blue" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z"/>
                         <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
