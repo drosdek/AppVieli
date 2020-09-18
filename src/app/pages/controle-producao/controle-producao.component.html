@@ -19,8 +19,8 @@
                   <th class="text-center">Visualizar</th>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td class="align-middle font-weight-bolder">Nome Maquina</td>
+                  <tr *ngFor="let equipamento of equipamentos">
+                    <td class="align-middle font-weight-bolder">{{equipamento.equipamento}}</td>
                     <td class="align-middle font-weight-bolder text-center">UM</td>
                     <td class="align-middle font-weight-bolder text-center">Meta %</td>
                     <td class="align-middle font-weight-bolder text-center">OEE %</td>
