@@ -1,14 +1,43 @@
 <div class="main-content">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-12">
-        <button id='click' class="btn btn-link">
-          <span class="material-icons" style="color: darkred;">
-            settings_overscan
-          </span>
+      <div class="col-8">
+        <button (click)="openFullscreen()" class="btn btn-primary btn-just-icon btn-round">
+          <i class="material-icons">fullscreen</i>
         </button>
       </div>
+      <div class="col-3">
+        <div class="dropdown float-right">
+          <button href="#" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true" >
+              Maquinas
+              <b class="caret"></b>
+          </button>
+          <ul class="dropdown-menu">
+              <li><a href="#">Maquina 01</a></li>
+              <li><a href="#">Maquina 02</a></li>
+              <li><a href="#">Maquina 03</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Maquina 04</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Maquina 05</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-1">
+        <div class="float-left">
+          <button class="btn btn-primary btn-just-icon btn-round">
+            <i class="material-icons">arrow_left</i>
+          </button>
+        </div>
+        <div class="float-right">
+          <button class="btn btn-primary btn-just-icon btn-round">
+            <i class="material-icons">arrow_right</i>
+          </button>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="container-fluid" #fullScreen>
     <!-- Header show name and date+hour -->
     <div class="row">
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
