@@ -5,9 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { ComponentsModule } from './components/components.module';
+
 import { FormsModule } from '@angular/forms';
+import { ComponentsModule } from './pages/components/components.module';
+import { AdminLayoutComponent } from './pages/layouts/admin-layout/admin-layout.component';
 
 @NgModule({
   imports: [
