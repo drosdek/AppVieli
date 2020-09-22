@@ -129,7 +129,7 @@ export class AdminLayoutComponent implements OnInit {
     });
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.runOnRouteChange();
   }
 
