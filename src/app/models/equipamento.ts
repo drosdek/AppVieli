@@ -13,9 +13,9 @@ export interface Equipamento {
   pctmeta: number;
   ritmodia: number;
   ritmometa: number;
-  ritmominuto: null;
+  ritmominuto: number;
   inicioparada: null;
-  TempoParado: null;
+  TempoParado: number;
   metaoee: number;
   grupotelao: number;
   pctretrabalho: number;
