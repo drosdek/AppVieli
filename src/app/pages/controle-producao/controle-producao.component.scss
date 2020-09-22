@@ -1,0 +1,70 @@
+td {
+  font-weight: 600;
+}
+.table thead th {
+  font-weight: 600;
+}
+
+.emOperacao {
+  border-radius: 1rem;
+  border: solid 2px;
+  border-color: green;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  color: green;
+  // margin-right: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.parada {
+  border-radius: 1rem;
+  border: solid 2px;
+  border-color: orange;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  color: orange;
+  // margin-right: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+// @-webkit-keyframes glowing {
+//   0% { background-color: orange; -webkit-box-shadow: 0 0 3px orange; }
+//   50% { background-color: orangered; -webkit-box-shadow: 0 0 3px orangered; }
+//   100% { background-color: orange; -webkit-box-shadow: 0 0 3px orange; }
+// }
+
+// @-moz-keyframes glowing {
+//   0% { background-color: orange; -moz-box-shadow: 0 0 3px orange; }
+//   50% { background-color: orangered; -moz-box-shadow: 0 0 3px orangered; }
+//   100% { background-color: orange; -moz-box-shadow: 0 0 3px orange; }
+// }
+
+// @-o-keyframes glowing {
+//   0% { background-color: orange; box-shadow: 0 0 3px orange; }
+//   50% { background-color: orangered; box-shadow: 0 0 3px orangered; }
+//   100% { background-color: orange; box-shadow: 0 0 3px orange; }
+// }
+
+// @keyframes glowing {
+//   0% { background-color: orange; box-shadow: 0 0 3px orange; }
+//   50% { background-color: orangered; box-shadow: 0 0 3px orangered; }
+//   100% { background-color: orange; box-shadow: 0 0 3px orange; }
+// }
+
+// .parada {
+//   -webkit-animation: glowing 1500ms infinite;
+//   -moz-animation: glowing 1500ms infinite;
+//   -o-animation: glowing 1500ms infinite;
+//   animation: glowing 1500ms infinite;
+
+// }
+
+.tempoParado {
+  color: orangered;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+
