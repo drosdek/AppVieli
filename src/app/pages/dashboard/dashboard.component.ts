@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Equipamento } from 'src/app/models/equipamento';
+import { EquipamentoService } from 'src/app/services/equipamento.service';
+
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  equipamento = {} as Equipamento;
+  equipamentos: Equipamento[];
+
+  constructor(private equipamentoService: EquipamentoService) { }
 
   ngOnInit(): void {
+    this.getEquipamentos();
   }
 
+  // Chama o serviço para obtém todos os equipamentos
+  getEquipamentos(): void {
+    this.equipamentoService.getEquipamentos().subscribe((equipamentos: Equipamento[]) => {
+      this.equipamentos = equipamentos;
+    });
+  }
 }
