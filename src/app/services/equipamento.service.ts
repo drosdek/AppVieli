@@ -9,7 +9,7 @@ import { Equipamento } from '../models/equipamento';
 })
 export class EquipamentoService {
 
-  url = 'http://localhost:3005/equipamentos';
+  private URL = 'http://localhost:3005/equipamentos';
 
   // Injetando HttpClient
   constructor( private httpClient: HttpClient ) { }
@@ -25,6 +25,15 @@ export class EquipamentoService {
       .pipe(
         retry(2),
         catchError(this.handleError));
+  }
+
+  // Obtem um equipamento pelo id
+  getEquipamentoById(id: number): Observable<Equipamento> {
+    return this.httpClient.get<Equipamento>(this.URL + '/single/' + id)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      );
   }
 
   // Manipulação de erros
