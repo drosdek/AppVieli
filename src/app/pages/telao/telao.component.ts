@@ -1,4 +1,9 @@
 import { Component, OnInit, HostBinding, ViewChild, ElementRef } from '@angular/core';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { Equipamento } from 'src/app/models/equipamento';
+import { EquipamentoService } from 'src/app/services/equipamento.service';
+
+import * as $ from 'jquery';
 
 
 @Component({
@@ -9,9 +14,18 @@ import { Component, OnInit, HostBinding, ViewChild, ElementRef } from '@angular/
 export class TelaoComponent implements OnInit {
   @ViewChild('fullScreen') divRef;
 
-  constructor() { }
+  equipamento = {} as Equipamento;
+  equipamentos: Equipamento[];
+
+
+  constructor(
+    private equipamentoService: EquipamentoService
+  ) { }
+
 
   ngOnInit(): void {
+
+    this.getEquipamentos();
 
   }
 
@@ -28,5 +42,26 @@ export class TelaoComponent implements OnInit {
     } else if (elem.webkitRequestFullscreen) {
       elem.webkitRequestFullscreen();
     }
+  }
+
+  // Chama o serviço para obtém todos os equipamentos
+  getEquipamentos(): void {
+    this.equipamentoService.getEquipamentos().subscribe((equipamentos: Equipamento[]) => {
+      this.equipamentos = equipamentos;
+    });
+    console.log(this.equipamentos);
+  }
+
+  getEquipamentoById(equipamento: number): void {
+    this.equipamentoService.getEquipamentoById(equipamento).subscribe(() => {
+      this.getEquipamentos();
+    });
+  }
+
+  // limpa o formulario
+  cleanForm(form: NgForm): void {
+    this.getEquipamentos();
+    form.resetForm();
+    this.equipamento = {} as Equipamento;
   }
 }
