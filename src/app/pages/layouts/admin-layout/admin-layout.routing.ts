@@ -17,6 +17,7 @@ export const AdminLayoutRoutes: Routes = [
     children: [{
       path: 'telao',
       component: TelaoComponent,
+      loadChildren: () => import('../../telao/telao.module').then(m => m.TelaoModule)
     }]
   },
   {
@@ -34,9 +35,4 @@ export const AdminLayoutRoutes: Routes = [
       component: SettingsComponent
     }]
   }
-
-//   { path: 'dashboard',	component: DashboardComponent },
-//   { path: 'telao',	component: TelaoComponent },
-//   { path: 'settings', component: SettingsComponent},
-//   { path: 'controle-producao', component: ControleProducaoComponent }
 ];
